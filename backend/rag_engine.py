@@ -32,7 +32,7 @@ def get_llm():
     return _llm_instance
 
 
-def generate_rag_response(query: str, user_id: int):
+def generate_rag_response(query: str, user_id: str):
     # 1. Access the specific user's vector embeddings
     vectorstore = get_vector_store()
     

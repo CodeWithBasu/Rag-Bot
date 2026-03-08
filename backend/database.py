@@ -1,19 +1,19 @@
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker, DeclarativeBase
+import os
+import motor.motor_asyncio
+from dotenv import load_dotenv
 
-SQLALCHEMY_DATABASE_URL = "sqlite:///./ragbot.db"
+load_dotenv()
 
-engine = create_engine(
-    SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False}
-)
-SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+# MongoDB Connection Configuration
+# Default to localhost if not provided
+MONGODB_URL = os.getenv("MONGODB_URL", "mongodb://localhost:27017")
+DB_NAME = os.getenv("DB_NAME", "rag_bot")
 
-class Base(DeclarativeBase):
-    pass
+# Create Motor Client
+client = motor.motor_asyncio.AsyncIOMotorClient(MONGODB_URL)
+db = client[DB_NAME]
 
-def get_db():
-    db = SessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
+async def get_db():
+    return db
+
+# Collections can be accessed via db['collection_name']

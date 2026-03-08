@@ -1,5 +1,5 @@
 from pydantic import BaseModel, EmailStr, ConfigDict
-from typing import Optional
+from typing import Optional, List
 
 class UserCreate(BaseModel):
     username: str
@@ -9,15 +9,15 @@ class UserCreate(BaseModel):
 class UserResponse(BaseModel):
     model_config = ConfigDict(from_attributes=True)
 
-    id: int
+    id: str
     username: str
     email: EmailStr
 
 class DocumentResponse(BaseModel):
     model_config = ConfigDict(from_attributes=True)
 
-    id: int
-    user_id: int
+    id: str
+    user_id: str
     filename: str
     upload_date: str
 
@@ -34,5 +34,4 @@ class ChatQuery(BaseModel):
 
 class ChatResponse(BaseModel):
     answer: str
-    sources: list[str] = []
-
+    sources: List[str] = []

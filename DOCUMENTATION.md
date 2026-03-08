@@ -24,15 +24,16 @@ RAG Bot is like having a genius librarian who has already read every page. You a
 
 We use a "Best-of-Breed" stack to ensure the bot is fast, secure, and accurate.
 
-| Component         | Technology               | Why we chose it?                                                 |
-| :---------------- | :----------------------- | :--------------------------------------------------------------- |
-| **Frontend**      | **React 19 + Vite**      | Blazing fast UI with modern features and premium aesthetics.     |
-| **Backend**       | **FastAPI (Python)**     | High-performance, asynchronous API framework.                    |
-| **AI Brain**      | **Llama 3.1 (via Groq)** | Industry-leading LLM optimized for speed (sub-second inference). |
-| **Vector DB**     | **Pinecone**             | Cloud-native vector search for lightning-fast context retrieval. |
-| **Embeddings**    | **HuggingFace MiniLM**   | Converts text into mathematical "vectors" with high accuracy.    |
-| **Orchestration** | **LangChain**            | The standard "glue" for building AI-powered applications.        |
-| **Security**      | **JWT + bcrypt**         | Industry-standard authentication and password hashing.           |
+| Component         | Technology               | Why we chose it?                                                    |
+| :---------------- | :----------------------- | :------------------------------------------------------------------ |
+| **Frontend**      | **React 19 + Vite**      | Blazing fast UI with modern features and premium aesthetics.        |
+| **Backend**       | **FastAPI (Python)**     | High-performance, asynchronous API framework.                       |
+| **AI Brain**      | **Llama 3.1 (via Groq)** | Industry-leading LLM optimized for speed (sub-second inference).    |
+| **Vector DB**     | **Pinecone**             | Cloud-native vector search for lightning-fast context retrieval.    |
+| **Database**      | **MongoDB**              | Industry-standard NoSQL database for flexible user data management. |
+| **Embeddings**    | **HuggingFace MiniLM**   | Converts text into mathematical "vectors" with high accuracy.       |
+| **Orchestration** | **LangChain**            | The standard "glue" for building AI-powered applications.           |
+| **Security**      | **JWT + bcrypt**         | Industry-standard authentication and password hashing.              |
 
 ---
 

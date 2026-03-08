@@ -37,7 +37,7 @@ We've selected the best tools in the industry to build a robust, production-read
 
 - **Frontend**: React 19 (Hooks & Context) + Vite + Custom CSS Variables.
 - **Backend**: FastAPI (Python) + LangChain Orchestration.
-- **Database**: SQLite (User Accounts) + Pinecone (Vector Store).
+- **Database**: MongoDB (User Accounts & Metadata) + Pinecone (Vector Store).
 - **Intelligence**: Meta Llama 3.1 via Groq (Sub-second processing).
 - **Embeddings**: HuggingFace Local Models (No data leakage to external embedding APIs).
 
@@ -49,8 +49,9 @@ I've engineered the setup to be as simple as possible. No terminal magic require
 
 ### 1️⃣ Prepare Environment
 
-Open `backend/.env` and enter your API keys:
+Open `backend/.env` and enter your credentials:
 
+- `MONGODB_URL`: Your MongoDB connection string (e.g., MongoDB Atlas).
 - `GROQ_API_KEY`: [Get it here](https://console.groq.com)
 - `PINECONE_API_KEY`: [Get it here](https://app.pinecone.io)
 
@@ -71,7 +72,7 @@ graph LR
     Frontend -->|Requests| Backend[FastAPI Engine]
     Backend -->|Search| Pinecone[(Vector Cloud)]
     Backend -->|Reason| GroqLLM[Llama 3.1 8B]
-    Backend -->|Auth| SQLite[(Local DB)]
+    Backend -->|Auth| MongoDB[(Managed MongoDB)]
     GroqLLM -->|Factual Answer| Backend
     Backend -->|Response| Frontend
 ```

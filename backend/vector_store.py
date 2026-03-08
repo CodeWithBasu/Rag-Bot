@@ -107,7 +107,7 @@ def _add_texts_with_retry(vectorstore, texts: list, metadatas: list):
     )
 
 
-def process_and_store_text(text: str, user_id: int, filename: str):
+def process_and_store_text(text: str, user_id: str, filename: str):
     """Chunks text and uploads it to Pinecone with user_id metadata."""
     if not text.strip():
         return
